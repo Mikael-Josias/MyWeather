@@ -58,8 +58,24 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
 	const [weather, setWeather] = useState<WeatherData | null>(null);
 
 	useEffect(() => {
+		navigator.geolocation.getCurrentPosition(
+			({ coords }) => {
+				getDataFromApi(
+					coords.latitude,
+					coords.longitude,
+					Intl.DateTimeFormat().resolvedOptions().timeZone
+				);
+			},
+			() => {
+				alert("Desculpe! Não conseguimos carregar os dados");
+			}
+		);
+	}, []);
+
+	function getDataFromApi(lat: number, long: number, timezone: string) {
 		const promisse = axios.get(
-			"https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,relativehumidity_2m,precipitation,weathercode,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum&current_weather=true&timeformat=unixtime&timezone=America%2FSao_Paulo"
+			"https://api.open-meteo.com/v1/forecast?hourly=temperature_2m,relativehumidity_2m,precipitation,weathercode,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum&current_weather=true&timeformat=unixtime",
+			{ params: { latitude: lat, longitude: long, timezone } }
 		);
 
 		promisse.then((res) => {
@@ -70,7 +86,7 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
 				"Erro ao buscar as informações!\n Tente novamente mais tarde"
 			);
 		});
-	}, []);
+	}
 
 	return (
 		<WeatherContext.Provider value={weather}>

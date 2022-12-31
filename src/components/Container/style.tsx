@@ -11,3 +11,10 @@ export const StyledContainer = styled.div`
 		margin-bottom: 30px;
 	}
 `;
+
+export const WeekdayList = styled.ul`
+	display: flex;
+	overflow: scroll;
+	margin-bottom: 60px;
+	width: 100%;
+`;

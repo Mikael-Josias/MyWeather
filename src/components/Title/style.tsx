@@ -24,7 +24,7 @@ export const StyledTitle = styled.h1`
 
 export const StyledImage = styled.img<Props>`
 	position: absolute;
-	top: ${(props) => (props.type === "sun" ? "0px" : "75px")};
+	top: ${(props) => (props.type === "sun" ? "10px" : "75px")};
 	left: ${(props) => (props.type === "sun" ? "20%" : "75%")};
 	height: 75px;
 	width: 75px;

@@ -6,12 +6,14 @@ interface Props {
 
 export const WeekdayCard = styled.div`
 	display: flex;
+	flex-shrink: 0;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	background-color: white;
 	border: 5px solid black;
 	border-radius: 5px;
+	margin: 0 15px;
 	padding: 15px;
 	height: 230px;
 	width: 190px;

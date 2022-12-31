@@ -74,7 +74,7 @@ export default function WeatherProvider({ children }: WeatherProviderProps) {
 
 	function getDataFromApi(lat: number, long: number, timezone: string) {
 		const promisse = axios.get(
-			"https://api.open-meteo.com/v1/forecast?hourly=temperature_2m,relativehumidity_2m,precipitation,weathercode,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum&current_weather=true&timeformat=unixtime",
+			"https://api.open-meteo.com/v1/forecast?hourly=temperature_2m,rain,relativehumidity_2m,precipitation,weathercode,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum&current_weather=true&timeformat=unixtime",
 			{ params: { latitude: lat, longitude: long, timezone } }
 		);
 

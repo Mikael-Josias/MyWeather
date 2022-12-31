@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-	height: 715px;
+	display: flex;
+	flex-direction: column;
 	width: 960px;
+
+	& > div {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 30px;
+	}
 `;

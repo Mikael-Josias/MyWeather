@@ -9,8 +9,9 @@ export const StyledHeader = styled.header`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 25px 0;
-	width: 100%;
+	margin: auto;
+	height: 150px;
+	width: 900px;
 `;
 
 export const StyledTitle = styled.h1`
@@ -23,8 +24,8 @@ export const StyledTitle = styled.h1`
 
 export const StyledImage = styled.img<Props>`
 	position: absolute;
-	top: ${(props) => (props.type === "sun" ? "0" : "1")};
-	left: ${(props) => (props.type === "sun" ? "26%" : "70%")};
+	top: ${(props) => (props.type === "sun" ? "0px" : "75px")};
+	left: ${(props) => (props.type === "sun" ? "20%" : "75%")};
 	height: 75px;
 	width: 75px;
 `;

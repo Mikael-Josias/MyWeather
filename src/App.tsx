@@ -1,6 +1,9 @@
+import "./assets/styles/fonts.css";
 import GlobalStyle from "./assets/styles/GlobalStyle";
+import Card from "./components/Card/Card";
 import Container from "./components/Container/Container";
-import WeatherProvider, { WeatherContext } from "./contexts/WeatherContext";
+
+import WeatherProvider from "./contexts/WeatherContext";
 
 function App() {
 	return (

@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
     body{
         min-height: 100vh;
     }
+
+    html{
+        font-family: 'Ubuntu', sans-serif;
+    }
 `;
 
 export default GlobalStyle;

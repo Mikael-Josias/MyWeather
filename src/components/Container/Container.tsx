@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { WeatherContext } from "../../contexts/WeatherContext";
+import Card from "../Card/Card";
 import { StyledContainer } from "./style";
 
 export default function Container() {
@@ -24,6 +25,8 @@ export default function Container() {
 					<span>Ventos: {weather?.current_weather.windspeed}</span>
 					<br />
 				</div>
+
+				<Card />
 			</StyledContainer>
 		</div>
 	);

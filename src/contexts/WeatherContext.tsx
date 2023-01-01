@@ -55,7 +55,52 @@ type WeatherProviderProps = {
 export const WeatherContext = createContext<WeatherData | null>(null);
 
 export default function WeatherProvider({ children }: WeatherProviderProps) {
-	const [weather, setWeather] = useState<WeatherData | null>(null);
+	const [weather, setWeather] = useState<WeatherData | null>({
+		latitude: 0,
+		longitude: 0,
+		generationtime_ms: 0,
+		utc_offset_seconds: 0,
+		timezone: "",
+		timezone_abbreviation: "",
+		elevation: 0,
+		current_weather: {
+			temperature: 0,
+			windspeed: 0,
+			winddirection: 0,
+			weathercode: 0,
+			time: 0,
+		},
+		hourly_units: {
+			time: "",
+			temperature_2m: "",
+			relativehumidity_2m: "",
+			precipitation: "",
+			weathercode: "",
+			windspeed_10m: "",
+		},
+		hourly: {
+			time: [],
+			temperature_2m: [],
+			relativehumidity_2m: [],
+			precipitation: [],
+			weathercode: [],
+			windspeed_10m: [],
+		},
+		daily_units: {
+			time: "",
+			weathercode: "",
+			temperature_2m_max: "",
+			temperature_2m_min: "",
+			precipitation_sum: "",
+		},
+		daily: {
+			time: [],
+			weathercode: [],
+			temperature_2m_max: [],
+			temperature_2m_min: [],
+			precipitation_sum: [],
+		},
+	});
 
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition(

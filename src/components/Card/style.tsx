@@ -14,9 +14,9 @@ export const WeekdayCard = styled.div`
 	border: 5px solid black;
 	border-radius: 5px;
 	margin: 0 15px;
-	padding: 15px;
+	padding: 15px 5px;
 	height: 230px;
-	width: 190px;
+	width: 175px;
 `;
 
 export const DayWeather = styled.img`
